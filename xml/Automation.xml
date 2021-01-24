@@ -3,9 +3,9 @@
 
 <suite name="All Test Suite">
 
-    <test verbose="2" name="BaiduFlow">
+    <test verbose="2" name="BaiDuFlow">
         <classes>
-            <class name="BaiduFlow"></class>
+            <class name="baidu.BaiDuFlow"></class>
         </classes>
     </test>
     <!--reportng测试报告-->

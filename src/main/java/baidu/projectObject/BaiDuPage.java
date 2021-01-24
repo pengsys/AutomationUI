@@ -2,8 +2,9 @@ package baidu.projectObject;
 
 import baidu.projectElement.BaiDuEle;
 import com.codeborne.selenide.Condition;
+import io.qameta.allure.Step;
+
 import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.page;
 
 /**
  * @author peng_luo@yeah.net
@@ -11,14 +12,21 @@ import static com.codeborne.selenide.Selenide.page;
  * @date 2020/7/2 22:31
  */
 public class BaiDuPage extends BaiDuEle {
-    public BaiDuPage bai_du_click(String text){
+
+    @Step("在搜索框输入需要查询的数据")
+    public void text_box_input(String text){
         $(text_box).should(Condition.exist).clear();
         $(text_box).sendKeys(text);
-        $(input_submit).should(Condition.exist).click();
-        return page(BaiDuPage.class);
     }
+
+    @Step("点击百度一下按钮")
+    public void bau_du_click(){
+        $(input_submit).should(Condition.exist).click();
+    }
+
     public BaiDuPage BaiDuClick(String text){
-        bai_du_click(text);
+        text_box_input(text);
+        bau_du_click();
         return this;
     }
 }

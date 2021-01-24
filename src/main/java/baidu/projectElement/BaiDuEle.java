@@ -2,8 +2,8 @@ package baidu.projectElement;
 
 import org.openqa.selenium.By;
 
-import static com.codeborne.selenide.Selectors.*;
 import static com.codeborne.selenide.Selectors.byId;
+
 
 /**
  * @author peng_luo@yeah.net
